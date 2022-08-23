@@ -1,0 +1,64 @@
+{
+  "$schema": "https://hypar.io/Schemas/Function.json",
+  "id": "6197fbec-8d75-4f64-965e-171b008eebca",
+  "name": "Editable Dimensions Example",
+  "description": "The EditableDimensionsExample function.",
+  "language": "C#",
+  "overrides": {
+    "Box Dimensions": {
+      "context": "[*discriminator=Elements.BoxElement]",
+      "identity": {
+        "Name": {
+          "type": "string"
+        }
+      },
+      "schema": {
+        "Width": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "$hyparUnitType": "length",
+          "minimum": 0.1
+        },
+        "Length": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "$hyparUnitType": "length",
+          "minimum": 0.1
+        },
+        "Height": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "$hyparUnitType": "length",
+          "minimum": 0.1
+        }
+      }
+    },
+    "Array Edit": {
+      "context": "[*discriminator=Elements.Stack]",
+      "identity": {
+        "Name": {
+          "type": "string"
+        }
+      },
+      "schema": {
+        "Heights": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "$hyparUnitType": "length",
+            "minimum": 0.1
+          }
+        }
+      }
+    }
+  },
+  "repository_url": "https://github.com/hypar-io/function",
+  "last_updated": "0001-01-01T00:00:00",
+  "cli_version": "1.2.0-alpha.8"
+}
